@@ -67,8 +67,8 @@ this.router.navigateByUrl(`/ProductsDetails/${id}`);
          this.productsApi.getAll().subscribe({
           next:(response)=>{
                     
-            // this.filterdProducts=response;
-            this.total=500;
+            this.filterdProducts=response;
+             this.total=500;
           },
           error:(error)=>{
             console.log(error);
