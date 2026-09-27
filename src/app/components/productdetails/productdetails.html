@@ -1,0 +1,7 @@
+<h1>{{currentProduct?.name}}</h1>
+<button class="btn btn-primary" (click)="goBack()">back</button>
+<div class="d-flex justify-content-between ">
+    <button class="btn btn-success" [disabled]="!hasPrevious" (click)="goPrivious()">Previous</button>
+    <button class="btn btn-success" [disabled]="!hasNext" (click)="goNext()">Next</button>
+
+</div>

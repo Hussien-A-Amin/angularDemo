@@ -1,0 +1,33 @@
+<form (submit)="submit()" class="">
+    <div class="g-5 d-flex flex-column">
+    <div>
+        <label   class="form-label" for="nm"   >name</label>
+        <input  class="form-control" [(ngModel)]="newPrd" name="name" type="text" id="nm">
+    </div>
+
+    <div>
+        <label class="form-label" for="cat">Category</label>
+        <select  class="form-control" [(ngModel)]="newPrd" name="categoryId" id="cat">
+            <option ></option>
+        </select>
+    </div>
+    <div>
+        <label class="form-label" for="prc">price</label>
+        <input  class="form-control" [(ngModel)]="newPrd" name="price" type="number" id="prc">
+    </div>
+    <div>
+        <label class="form-label" for="qnt">Quntity</label>
+        <input  class="form-control" [(ngModel)]="newPrd" name="quantity" type="number" id="qnt">
+    </div>
+
+
+    <div>
+        <label class="form-label" for="img">Image</label>
+        <input  class="form-control" [(ngModel)]="newPrd" type="file" name="imgurl" id="img">
+    </div>
+    <div>
+        <input  class="btn btn-primary"  type="submit" >
+
+    </div>
+    </div>
+</form>

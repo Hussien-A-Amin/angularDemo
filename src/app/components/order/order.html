@@ -1,0 +1,7 @@
+<select class="mx-5" [(ngModel)]="selectedCatId" >
+    <option  value="0">All</option>
+    <option *ngFor="let cat of categories" [value]="cat.id">{{cat.name}}</option>
+</select>
+ <h1>{{recievedTotal}}</h1>
+
+ <app-shop [recieverCatId]="selectedCatId" (onTotalChanged)="TotalChanged($event)"></app-shop>

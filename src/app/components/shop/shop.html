@@ -1,0 +1,104 @@
+
+
+
+
+<!-- <h1>{{total}}</h1>
+<h1>{{total|squre:3}}</h1>
+<h1>{{myDate |date}}</h1> -->
+<!-- <div class="row p-3">
+  <ng-container  *ngFor="let g of products index as i;let c=count;trackBy: trackByFn">
+  [class.d-none]="g.categoryId!=selectedCatId"
+<div class="card col-3" *ngIf="g.id==1"
+  [style.background-color]="(g.categoryId==1)?'white':'red'"
+  >
+  <img [src]="g.imgurl" class="card-img-top" alt="...">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+
+        <h5 class="card-title"><span>{{i+1}}</span> {{g.name}}</h5>
+        <div>
+
+            <h6 >{{g.price}} $</h6>
+            <h6 *ngIf="g.quantity>0;else lastItem">#{{g.quantity}}</h6>
+            <ng-template #lastItem>Last Item</ng-template>
+        </div>
+        <div [ngSwitch]="g.quantity">
+            <h6 >{{g.price}} $</h6>
+            <h6 *ngSwitchCase="1">Last Item</h6>
+            <h6 *ngSwitchCase="2">Last 2 Item</h6>
+            <h6 *ngSwitchDefault>#{{g.quantity}}</h6>
+            <ng-template #lastItem>Last Item</ng-template>
+        </div>
+    </div>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+    <input type="number" #countInput />
+    <a class="btn " 
+    [ngClass]="(g.quantity==1)?'btn-warning':'btn-primary'" 
+    [ngStyle]="{'background-color':(g.quantity==1)?'blue':'brown'}" 
+    (click)="buy(countInput.value,g)">Buy Now</a>
+   
+  </div>
+</div>
+</ng-container>
+</div> -->
+<!-- <h5>{{selectedCatId}}</h5>
+ <input type="number" #test />
+    <a class="btn btn-primary" (click)="changecategory(test.value)">change Now</a> -->
+
+
+<h1>{{total}}</h1>
+<div class="d-flex justify-content-end">
+<a routerLink="/shop/add" class="btn btn-primary btn-sm mx-3">add</a>
+<a (click)="test()" class="btn btn-warning btn-sm mx-3">test</a>
+</div>
+    
+    <div class="row p-3 g-2">
+@for(g of filterdProducts ;track g.id;let i=$index) {
+  
+  
+ 
+
+    <div class="card col-6 col-lg-3  mouse-hand" [routerLink]="['/ProductsDetails',g.id]" 
+  
+  >
+  
+  <img [src]="g.imgurl" class="card-img-top" alt="...">
+  <div class="card-body" appHighlightCard="green" alterColor="blue">
+    <div class="d-flex justify-content-between">
+
+        <h5 class="card-title"><span>{{i+1}}</span> {{g.name}}</h5>
+        <div>
+           <h6 >{{g.price |currency:"EUR":"code"}}</h6>
+           @switch (g.quantity) {
+             @case (1) {
+               
+               <h6 >Last Item</h6>
+              }
+              @case (2) {
+
+                <h6 >Last 2 Item</h6>
+              }
+              @default {
+                
+                  <h6 >#{{g.quantity}}</h6>
+                  
+                }
+                
+                
+              }
+              
+            </div>
+            </div>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+      <input type="number" #countInput />
+      <a class="btn " 
+    [ngClass]="(g.quantity==1)?'btn-warning':'btn-primary'" 
+    [ngStyle]="{'background-color':(g.quantity==1)?'blue':'brown'}" 
+    (click)="buy(countInput.value,g)">Buy Now</a>
+   <button class="btn btn-outline-success" (click)="goTo(g.id)">Details</button>
+  </div>
+</div>
+
+
+}
+</div>
