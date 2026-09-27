@@ -13,7 +13,7 @@ export class AddProduct {
 newPrd:Iproduct;
 constructor (){
   this. newPrd= {
-    id:0,
+    id:"",
     name:"",
     price:0,
     quantity:0,

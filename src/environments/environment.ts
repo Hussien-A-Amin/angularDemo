@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl:"https://ranked-sulphuric-earthworm.ngrok-free.dev",
+    baseUrl:"http://localhost:5006",
 };

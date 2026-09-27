@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { ICategory } from '../../models/i-category';
 import { HighlightCard } from '../../directives/highlight-card';
 import { SqurePipe } from '../../Pipes/squre-pipe';
-import { StaticProducts } from '../../services/static-products';
 import { Router, RouterLink } from '@angular/router';
 import { ProductsApi } from '../../services/products-api';
 
@@ -16,7 +15,7 @@ import { ProductsApi } from '../../services/products-api';
   styleUrl: './shop.css',
 })
 export class Shop implements OnChanges,OnInit {
-goTo(id: number) {
+goTo(id: string) {
 this.router.navigateByUrl(`/ProductsDetails/${id}`);
 }
 
@@ -67,7 +66,12 @@ this.router.navigateByUrl(`/ProductsDetails/${id}`);
          this.productsApi.getAll().subscribe({
           next:(response)=>{
                     
-            this.filterdProducts=response;
+            console.log("======================================================");
+            console.log(response)
+            let rrs=response;
+
+            
+            this.filterdProducts=response.data;
              this.total=500;
           },
           error:(error)=>{
@@ -78,7 +82,7 @@ this.router.navigateByUrl(`/ProductsDetails/${id}`);
 
       else{
 
-         this.productsApi.getByCatId(this.recieverCatId).subscribe({
+         this.productsApi.getByCatId(this.recieverCatId.toString()).subscribe({
           next:(response)=>{
             this.filterdProducts=response;
           },

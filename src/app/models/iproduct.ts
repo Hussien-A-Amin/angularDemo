@@ -1,5 +1,5 @@
 export interface Iproduct {
-id:number,
+id:string,
 name:string,
 categoryId:number
 imgurl:string,
