@@ -68,7 +68,6 @@ this.router.navigateByUrl(`/ProductsDetails/${id}`);
                     
             console.log("======================================================");
             console.log(response)
-            let rrs=response;
 
             
             this.filterdProducts=response.data;
@@ -84,7 +83,7 @@ this.router.navigateByUrl(`/ProductsDetails/${id}`);
 
          this.productsApi.getByCatId(this.recieverCatId.toString()).subscribe({
           next:(response)=>{
-            this.filterdProducts=response;
+            this.filterdProducts=response.data;
           },
           error:(error)=>{
             console.log(error);

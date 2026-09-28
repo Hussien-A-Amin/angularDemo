@@ -6,9 +6,10 @@ import { Footer } from './components/footer/footer';
 import { NgbAlert } from '@ng-bootstrap/ng-bootstrap/alert';
 import { Shop } from './components/shop/shop';
 import { Order } from './components/order/order';
+import { SwalWrapper } from './components/swal-wrapper/swal-wrapper';
 @Component({
   selector: 'app-root',
-  imports: [Header,Footer,RouterOutlet],
+  imports: [Header,Footer,RouterOutlet,SwalWrapper],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

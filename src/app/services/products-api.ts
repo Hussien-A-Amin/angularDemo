@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Iproduct } from '../models/iproduct';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 import { IhttpResponse } from '../models/ihttp-response';
 
 @Injectable({
@@ -21,16 +21,16 @@ export class ProductsApi {
   
   }
   
-  getById(id:string):Observable<Iproduct>{
-   return this.http.get<Iproduct>(`${environment.baseUrl}/products/${id}`)
+  getById(id:string):Observable<IhttpResponse<Iproduct>>{
+   return this.http.get<IhttpResponse<Iproduct>>(`${environment.baseUrl}/products/${id}`)
   }
 
-  getByCatId(id:string):Observable<Iproduct[]>{
-   return this.http.get<Iproduct[]>(`${environment.baseUrl}/products?categoryId=${id}`)
+  getByCatId(id:string):Observable<IhttpResponse<Iproduct[]>>{
+   return this.http.get<IhttpResponse<Iproduct[]>>(`${environment.baseUrl}/products?categoryId=${id}`)
   }
 
-  delete(id:string):Observable<Iproduct>{
-   return this.http.delete<Iproduct>(`${environment.baseUrl}/products/${id}`)
+  delete(id:string):Observable<boolean>{
+   return this.http.delete<boolean>(`${environment.baseUrl}/products/${id}`)
   }
 
 

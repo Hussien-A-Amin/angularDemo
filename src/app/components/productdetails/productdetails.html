@@ -5,3 +5,108 @@
     <button class="btn btn-success" [disabled]="!hasNext" (click)="goNext()">Next</button>
 
 </div>
+<button
+  [swal]="{ title: 'Save file as...', 
+   showDenyButton: true, denyButtonText: 'Don\'t save', showCancelButton: true }"
+  (confirm)="saveFile($event)"
+  (deny)="handleDenial()"
+  (dismiss)="handleDismiss($event)"
+>
+  Save
+</button>
+
+<div></div>
+
+<swal
+  #deleteSwal
+  title="Are you sure?"
+  text="You are about to permanently delete this account. This action cannot be undone."
+  icon="warning"
+  [showCancelButton]="true"
+  confirmButtonText="Yes, delete it"
+  cancelButtonText="Cancel"
+  confirmButtonColor="#dc3545"
+  [focusCancel]="true"
+>
+</swal>
+
+<button class="btn btn-danger btn-sm" [swal]="deleteSwal">Delete Account</button>
+<div>
+    <swal
+  #discardSwal
+  title="Discard unsaved changes?"
+  text="Any modifications made to this form will be lost."
+  icon="warning"
+  [showCancelButton]="true"
+  confirmButtonText="Discard Changes"
+  cancelButtonText="Keep Editing"
+  confirmButtonColor="#fd7e14"
+>
+</swal>
+
+<button class="btn btn-outline-secondary btn-sm" [swal]="discardSwal">Cancel</button>
+</div>
+<div>
+<swal
+  #archiveSwal
+  title="Archive Project?"
+  text="This project will be hidden from your dashboard, but you can restore it anytime."
+  icon="info"
+  [showCancelButton]="true"
+  confirmButtonText="Archive"
+  cancelButtonText="Stay Active"
+  confirmButtonColor="#0d6efd"
+>
+</swal>
+
+<button class="btn btn-warning btn-sm" [swal]="archiveSwal">Archive</button>
+</div>
+<div>
+<swal
+  #bulkPublishSwal
+  title="Publish 12 Selected Items?"
+  text="These items will immediately become visible to all active users."
+  icon="question"
+  [showCancelButton]="true"
+  confirmButtonText="Publish All"
+  cancelButtonText="Review Items"
+  confirmButtonColor="#198754"
+>
+</swal>
+
+<button class="btn btn-success btn-sm" [swal]="bulkPublishSwal">Publish Selected</button>
+</div>
+<div>
+<swal
+  #revokeAccessSwal
+  title="Revoke API Key?"
+  text="Integrations using this key will stop working immediately."
+  icon="error"
+  [showCancelButton]="true"
+  confirmButtonText="Revoke Access"
+  cancelButtonText="Keep Key"
+  confirmButtonColor="#dc3545"
+  [focusCancel]="true"
+>
+</swal>
+
+<button class="btn btn-outline-danger btn-sm" [swal]="revokeAccessSwal">Revoke Key</button>
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
+<div>
+
+</div>
